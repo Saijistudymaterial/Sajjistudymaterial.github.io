@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sai Ji Study Material - CBSE Class 9 & 10 Resources</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #4a6bff;
+      --secondary: #ff6b6b;
+      --accent: #20c997;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --darker: #212529;
+      --radius: 12px;
+      --shadow: 0 4px 15px rgba(0,0,0,0.1);
+      --gradient: linear-gradient(135deg, #4a6bff, #6a85ff);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header with Animated Background */
+    .header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: var(--gradient);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+      animation: rotate 20s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    .header h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      margin-bottom: 1rem;
+      position: relative;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      animation: fadeInDown 1s ease;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      position: relative;
+      opacity: 0.9;
+      animation: fadeInUp 1s ease;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Floating Download Button */
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--secondary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 20px rgba(255,107,107,0.4);
+      z-index: 100;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+
+    .floating-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(255,107,107,0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(255,107,107,0); }
+      100% { box-shadow: 0 0 0 0 rgba(255,107,107,0); }
+    }
+
+    /* Main Content */
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      position: relative;
+    }
+
+    /* Ad Banners */
+    .ad-banner {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1rem;
+      margin: 2rem 0;
+      text-align: center;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      animation: fadeIn 1s ease;
+    }
+
+    /* Subject Cards with Hover Effects */
+    .subjects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    }
+
+    .subject-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      animation: fadeIn 0.6s ease;
+    }
+
+    .subject-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+    }
+
+    .subject-card h2 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .subject-card h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--secondary);
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-left: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .download-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-2px);
+    }
+
+    .subject-card ul {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .subject-card li {
+      margin-bottom: 0.8rem;
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .subject-card li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* Social Channels Section */
+    .social-section {
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .social-section h2 {
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      font-size: 2rem;
+    }
+
+    .social-channels {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .channel-card {
+      background: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .channel-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .channel-card i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+      transition: all 0.3s ease;
+    }
+
+    .channel-card:hover i {
+      transform: scale(1.2);
+    }
+
+    .channel-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--dark);
+    }
+
+    .channel-card p {
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .channel-btn {
+      display: inline-block;
+      background: var(--gradient);
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+
+    .channel-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(74, 107, 255, 0.3);
+    }
+
+    /* Footer with Wave Effect */
+    footer {
+      background: var(--darker);
+      color: white;
+      padding-top: 4rem;
+      margin-top: 4rem;
+      position: relative;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      left: 0;
+      right: 0;
+      height: 50px;
+      background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f5f7fa" opacity=".25"/><path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" fill="%23f5f7fa" opacity=".5"/><path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="%23f5f7fa"/></svg>');
+      background-size: cover;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+      text-align: center;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .footer-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-links a:hover::after {
+      width: 100%;
+    }
+
+    .social-icons {
+      margin: 2rem 0;
+    }
+
+    .social-icons a {
+      color: white;
+      margin: 0 1rem;
+      font-size: 1.5rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+
+    .social-icons a:hover {
+      color: var(--accent);
+      transform: translateY(-5px);
+    }
+
+    .copyright {
+      opacity: 0.8;
+      font-size: 0.9rem;
+      margin-top: 2rem;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .subjects, .social-channels {
+        grid-template-columns: 1fr;
+      }
+      
+      .download-btn {
+        display: block;
+        margin: 0.5rem 0 0 0;
+        width: fit-content;
+      }
+      
+      .footer-links {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <div class="header">
+    <h1>Sai Ji Study Material</h1>
+    <p>Your Complete Resource for CBSE Class 9 & 10 Study Materials</p>
+  </div>
+
+  <!-- Ad Banner 1 (Top) -->
+  <div class="container">
+    <div class="ad-banner">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6388125087297945"
+       crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6388125087297945"
+           data-ad-slot="6297337077"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+
+    <!-- Class 10 Mathematics Chapters -->
+    <h2 style="margin: 1rem 0; color: var(--primary);">Class 10 Mathematics Chapters</h2>
+    <p style="margin-bottom: 1.5rem; color: #666;">Click on any chapter to download detailed notes and solutions.</p>
+    
+    <div class="subjects">
+      <!-- Chapter 1 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-square-root-alt"></i> Chapter 1: Real Numbers 
+          <a href="https://drive.google.com/file/d/1tXbAskgWgGuQHVkgpWICUU_9cixKOAEk/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Euclid's Division Lemma</li>
+          <li>Fundamental Theorem of Arithmetic</li>
+          <li>Revisiting Rational & Irrational Numbers</li>
+          <li>Decimal Expansions</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 2 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-function"></i> Chapter 2: Polynomials
+          <a href="https://drive.google.com/file/d/12hzyxBbv42hVKwEWWxn88xi2iVVmzcVY/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Geometrical Meaning of Zeros</li>
+          <li>Relationship between Zeros & Coefficients</li>
+          <li>Division Algorithm for Polynomials</li>
+          <li>Graphical Representations</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 3 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-equals"></i> Chapter 3: Pair of Linear Equations
+          <a href="https://drive.google.com/file/d/1gsxt3RpdAkUnYLFEH5XRceRgOJmX8FOR/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Graphical Method of Solution</li>
+          <li>Algebraic Methods (Substitution, Elimination)</li>
+          <li>Cross-Multiplication Method</li>
+          <li>Equations Reducible to Linear Form</li>
+        </ul>
+      </div>
+      
+      <!-- Ad Banner 2 (Middle) -->
+      <div class="ad-banner" style="grid-column: 1 / -1;">
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6388125087297945"
+         crossorigin="anonymous"></script>
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-6388125087297945"
+             data-ad-slot="5016029088"
+             data-ad-format="auto"
+             data-full-width-responsive="true"></ins>
+        <script>
+             (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+      </div>
+      
+      <!-- Chapter 4 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-superscript"></i> Chapter 4: Quadratic Equations
+          <a href="https://drive.google.com/file/d/1qkNftu2Mskx7uexoryBPHfsXjQ-qWvIi/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Solution by Factorization</li>
+          <li>Solution by Completing the Square</li>
+          <li>Quadratic Formula</li>
+          <li>Nature of Roots</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 5 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-sort-numeric-up"></i> Chapter 5: Arithmetic Progressions
+          <a href="https://drive.google.com/file/d/1pbH5FbO52-V-SJt6qK9WvmA6IbSmdrly/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>nth Term of an AP</li>
+          <li>Sum of First n Terms</li>
+          <li>Word Problems</li>
+          <li>Applications in Real Life</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 6 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-shapes"></i> Chapter 6: Triangles
+          <a href="https://drive.google.com/file/d/1Qr0qcbNoKQR38efHfOsfXF47TK0XL6na/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Similarity of Triangles</li>
+          <li>Criteria for Similarity</li>
+          <li>Areas of Similar Triangles</li>
+          <li>Pythagoras Theorem</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 7 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-map-marked-alt"></i> Chapter 7: Coordinate Geometry
+          <a href="https://drive.google.com/file/d/1lqBpodxvnR965kE7lqyA75ywn5tSSz5i/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Distance Formula</li>
+          <li>Section Formula</li>
+          <li>Area of Triangle</li>
+          <li>Collinearity of Points</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 8 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-superscript"></i> Chapter 8: Trigonometry
+          <a href="https://drive.google.com/file/d/1-CQOKq3sWzlUTZw4R1Rq91GDDYVI-Qz8/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Trigonometric Ratios</li>
+          <li>Trigonometric Identities</li>
+          <li>Complementary Angles</li>
+          <li>Basic Problems</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 9 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-ruler-combined"></i> Chapter 9: Applications of Trigonometry
+          <a href="https://drive.google.com/file/d/1aaZS7ImdhwgmBJUXj6rAv6mD1XoezFDb/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Heights and Distances</li>
+          <li>Angle of Elevation & Depression</li>
+          <li>Real-life Applications</li>
+          <li>Word Problems</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 10 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-circle"></i> Chapter 10: Circles
+          <a href="https://drive.google.com/file/d/1jDchKiDGNoNnIoSzpjTxPRBHs-RIgpB3/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Tangent to a Circle</li>
+          <li>Number of Tangents from a Point</li>
+          <li>Length of Tangent</li>
+          <li>Theorems Related to Tangents</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 11 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-ruler"></i> Chapter 11: Constructions
+          <a href="#" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Division of Line Segment</li>
+          <li>Construction of Tangents</li>
+          <li>Construction of Triangles</li>
+          <li>Step-by-step Methods</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 12 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-chart-pie"></i> Chapter 12: Areas Related to Circles
+          <a href="https://drive.google.com/file/d/1BoEwvTcc3Qp0x2-pDXG7oNxa7XAjOv-L/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Perimeter & Area of Circle</li>
+          <li>Areas of Sector & Segment</li>
+          <li>Areas of Combinations</li>
+          <li>Practical Problems</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 13 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-cube"></i> Chapter 13: Surface Areas & Volumes
+          <a href="https://drive.google.com/file/d/11EhTRwDx_ATI-WQWzk5ONlm9rc73KbkV/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Surface Area of Combinations</li>
+          <li>Volume of Combinations</li>
+          <li>Conversion of Solids</li>
+          <li>Frustum of Cone</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 14 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-chart-bar"></i> Chapter 14: Statistics
+          <a href="https://drive.google.com/file/d/1dMV5CCCOlKcgA9E1ir9ZYUwCM3bKa9a2/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Mean of Grouped Data</li>
+          <li>Mode of Grouped Data</li>
+          <li>Median of Grouped Data</li>
+          <li>Graphical Representation</li>
+        </ul>
+      </div>
+      
+      <!-- Chapter 15 -->
+      <div class="subject-card">
+        <h2><i class="fas fa-dice"></i> Chapter 15: Probability
+          <a href="https://drive.google.com/file/d/1CN-Q7HESEk5nGWHvJzooZGc8bXAFNoaU/view" target="_blank" class="download-btn" onclick="showAd()">
+            <i class="fas fa-download"></i> Download PDF
+          </a>
+        </h2>
+        <ul>
+          <li>Theoretical Probability</li>
+          <li>Complementary Events</li>
+          <li>Simple Problems</li>
+          <li>Real-life Applications</li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Ad Banner 3 (Middle) -->
+    <div class="ad-banner">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6388125087297945"
+       crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6388125087297945"
+           data-ad-slot="3104181616"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+    
+    <!-- Social Channels Section -->
+    <div class="social-section">
+      <h2><i class="fas fa-users"></i> Join Our Community</h2>
+      <p>Connect with us for daily updates, study tips and resources</p>
+      
+      <div class="social-channels">
+        <div class="channel-card">
+          <i class="fab fa-telegram"></i>
+          <h3>Udaan Batch PW Foundation</h3>
+          <p>Daily updates, notes and important announcements</p>
+          <a href="https://t.me/udannbatchpwfoundation" target="_blank" class="channel-btn">Join Telegram</a>
+        </div>
+        
+        <div class="channel-card">
+          <i class="fab fa-telegram"></i>
+          <h3>Next Toppers Channel</h3>
+          <p>Exam tips, motivation and study strategies</p>
+          <a href="https://t.me/Nexttopperschannel" target="_blank" class="channel-btn">Join Telegram</a>
+        </div>
+        
+        <div class="channel-card">
+          <i class="fab fa-whatsapp"></i>
+          <h3>WhatsApp Channel</h3>
+          <p>Instant updates and resources on WhatsApp</p>
+          <a href="https://whatsapp.com/channel/0029Va7Y0wjGzzKRVneUM62c" target="_blank" class="channel-btn">Follow Now</a>
+        </div>
+        
+        <div class="channel-card">
+          <i class="fab fa-youtube"></i>
+          <h3>YouTube Channel</h3>
+          <p>Motivational videos and study tips</p>
+          <a href="https://youtube.com/@motivativationallines?si=07F6jNnOufrt9ppP" target="_blank" class="channel-btn">Subscribe</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Ad Banner 4 (Bottom) -->
+    <div class="ad-banner">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6388125087297945"
+       crossorigin="anonymous"></script>
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-6388125087297945"
+           data-ad-slot="8125182818"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+           (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+    </div>
+  </div>
+
+  <!-- Floating Download Button -->
+  <div class="floating-btn" onclick="window.location.href='https://drive.google.com/drive/folders/1ZY-vEBXlRy_Y76r3a84uwqphWKrsBHld'">
+    <i class="fas fa-download"></i>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3>Sai Ji Study Material</h3>
+      <p>Your trusted source for quality CBSE study materials</p>
+      
+      <div class="footer-links">
+        <a href="#">About Us</a>
+        <a href="#">Study Materials</a>
+        <a href="#">Sample Papers</a>
+        <a href="#">Contact</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      
+      <div class="social-icons">
+        <a href="https://t.me/udannbatchpwfoundation" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://t.me/Nexttopperschannel" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://whatsapp.com/channel/0029Va7Y0wjGzzKRVneUM62c" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@motivativationallines?si=07F6jNnOufrt9ppP" target="_blank"><i class="fab fa-youtube"></i></a>
+      </div>
+      
+      <div class="copyright">
+        &copy; 2023 Sai Ji Study Material. All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Show ad when download button clicked
+    function showAd() {
+      // Show ad before download (70% chance)
+      if (Math.random() > 0.3) {
+        const adScript = document.createElement('script');
+        adScript.async = true;
+        adScript.src = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6388125087297945";
+        adScript.crossOrigin = "anonymous";
+        document.head.appendChild(adScript);
+        
+        const adIns = document.createElement('ins');
+        adIns.className = "adsbygoogle";
+        adIns.style.display = "block";
+        adIns.dataset.adClient = "ca-pub-6388125087297945";
+        adIns.dataset.adSlot = "8125182818";
+        adIns.dataset.adFormat = "auto";
+        adIns.dataset.fullWidthResponsive = "true";
+        
+        const adContainer = document.createElement('div');
+        adContainer.style.position = "fixed";
+        adContainer.style.top = "50%";
+        adContainer.style.left = "50%";
+        adContainer.style.transform = "translate(-50%, -50%)";
+        adContainer.style.zIndex = "10000";
+        adContainer.style.background = "white";
+        adContainer.style.padding = "20px";
+        adContainer.style.borderRadius = "10px";
+        adContainer.style.boxShadow = "0 0 20px rgba(0,0,0,0.3)";
+        
+        const closeBtn = document.createElement('button');
+        closeBtn.textContent = "×";
+        closeBtn.style.position = "absolute";
+        closeBtn.style.top = "10px";
+        closeBtn.style.right = "10px";
+        closeBtn.style.background = "none";
+        closeBtn.style.border = "none";
+        closeBtn.style.fontSize = "20px";
+        closeBtn.style.cursor = "pointer";
+        
+        closeBtn.addEventListener('click', () => {
+          document.body.removeChild(adContainer);
+        });
+        
+        adContainer.appendChild(closeBtn);
+        adContainer.appendChild(adIns);
+        document.body.appendChild(adContainer);
+        
+        setTimeout(() => {
+          (adsbygoogle = window.adsbygoogle || []).push({});
+        }, 200);
+      }
+    }
+  </script>
+</body>
+</html>
